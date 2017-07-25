@@ -9,12 +9,16 @@ public:
             an=10*an+t%10;
             ++i;
         }
-        for(int j;j<i/2;j++)
+        /*for(int j;j<i/2;j++)
         {
             if(s%10!=an%10)
                 return false;
         }
         return true;
+        */
+        if(an==s)
+            return true;
+        return false;
     }
 };
 int main(void)
