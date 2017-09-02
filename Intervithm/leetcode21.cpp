@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
 /**
+对于结构数组，递归还是很重要且有效的解法！
  * Definition for singly-linked list.
  * struct ListNode {
  *     int val;
