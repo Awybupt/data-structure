@@ -11,6 +11,8 @@
 常用字符串哈希函数有 BKDRHash，APHash，DJBHash，JSHash，RSHash，SDBMHash，PJWHash，ELFHash等等。对于以上几种哈希函数，我对其进行了一个小小的评测。
 
 其中数据1为100000个字母和数字组成的随机串哈希冲突个数。数据2为100000个有意义的英文句子哈希冲突个数。数据3为数据1的哈希值与 1000003(大素数)求模后存储到线性表中冲突的个数。数据4为数据1的哈希值与10000019(更大素数)求模后存储到线性表中冲突的个数。
+
+```cpp
 unsigned int SDBMHash(char *str)
 {
     unsigned int hash = 0;
@@ -23,7 +25,9 @@ unsigned int SDBMHash(char *str)
  
     return (hash & 0x7FFFFFFF);
 }
- 
+```
+
+```cpp
 // RS Hash Function
 unsigned int RSHash(char *str)
 {
@@ -39,7 +43,9 @@ unsigned int RSHash(char *str)
  
     return (hash & 0x7FFFFFFF);
 }
- 
+```
+
+```cpp
 // JS Hash Function
 unsigned int JSHash(char *str)
 {
@@ -52,7 +58,10 @@ unsigned int JSHash(char *str)
  
     return (hash & 0x7FFFFFFF);
 }
+```
  
+ 
+ ```cpp
 // P. J. Weinberger Hash Function
 unsigned int PJWHash(char *str)
 {
@@ -74,7 +83,9 @@ unsigned int PJWHash(char *str)
  
     return (hash & 0x7FFFFFFF);
 }
- 
+```
+
+```cpp
 // ELF Hash Function
 unsigned int ELFHash(char *str)
 {
@@ -94,6 +105,9 @@ unsigned int ELFHash(char *str)
     return (hash & 0x7FFFFFFF);
 }
  
+```
+
+```cpp
 // BKDR Hash Function
 unsigned int BKDRHash(char *str)
 {
@@ -108,6 +122,9 @@ unsigned int BKDRHash(char *str)
     return (hash & 0x7FFFFFFF);
 }
  
+```
+
+```cpp
 // DJB Hash Function
 unsigned int DJBHash(char *str)
 {
@@ -120,7 +137,9 @@ unsigned int DJBHash(char *str)
  
     return (hash & 0x7FFFFFFF);
 }
- 
+```
+
+```cpp
 // AP Hash Function
 unsigned int APHash(char *str)
 {
@@ -141,9 +160,13 @@ unsigned int APHash(char *str)
  
     return (hash & 0x7FFFFFFF);
 }
+
+```
  编程珠玑中的一个hash函数
 
 //用跟元素个数最接近的质数作为散列表的大小
+
+```
 #define NHASH 29989
 #define MULT 31
 
@@ -154,3 +177,4 @@ unsigned in hash(char *p)
         h = MULT *h + *p;
     return h % NHASH;
 }
+```
