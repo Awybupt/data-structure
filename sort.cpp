@@ -1,6 +1,5 @@
-//第一次写排序算法
 #include <iostream>
-#include<cstdio>
+#include <cstdio>
 using namespace std;
 
 void swap_array(int arraynum[],int i,int j)//交换函数
